@@ -1,0 +1,36 @@
+.ListComponent {
+    width: 80%;
+    border: 2px solid #000;
+    padding: 10px;
+
+    margin-top: 50px;
+
+    .innerElement {
+        .Text {
+            margin-top: -35px;
+            width: 100px;
+            display: flex;
+            justify-content: center;
+
+            background-color: #FFF;
+        }
+
+        .TableElement {
+            .Grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr 2fr 3fr repeat(2, 2fr) 1fr;
+                
+                &.Header{
+                    font-weight: bold;
+                    background-color: #999;
+                }
+
+                .inner{
+                    border: 2px solid #000;
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}

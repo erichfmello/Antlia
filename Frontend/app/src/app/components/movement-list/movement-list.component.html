@@ -1,0 +1,27 @@
+<div class="ListComponent">
+    <div class="innerElement">
+        <div class="Text">
+            <p class="TextTitle">Lista</p>
+        </div>
+        <div class="TableElement">
+            <div class="Grid Header">
+                <div class="inner">Mês</div>
+                <div class="inner">Ano</div>
+                <div class="inner">Código do Produto</div>
+                <div class="inner">Descrição do Produto</div>
+                <div class="inner">NR Lançamento</div>
+                <div class="inner">Descrição</div>
+                <div class="inner">Valor</div>
+            </div>
+            <div class="Grid" *ngFor="let item of movimentations">
+                <div class="inner">{{item.month}}</div>
+                <div class="inner">{{item.year}}</div>
+                <div class="inner">{{item.productCod}}</div>
+                <div class="inner">{{item.productDescription}}</div>
+                <div class="inner">{{item.releaseNumber}}</div>
+                <div class="inner">{{item.releaseDescription}}</div>
+                <div class="inner">{{FormaMoney(item.value)}}</div>
+            </div>
+        </div>
+    </div>
+</div>

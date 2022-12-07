@@ -1,0 +1,86 @@
+.movementListComponent {
+    width: 50%;
+
+    .Text {
+        .TextTitle {
+            font-size: 30px;
+            font-weight: bold;
+        }
+    }
+
+    .Board {
+        width: 100%;
+        border: 2px solid #000;
+        padding: 10px;
+
+        .TextLabel {
+            float: left;
+            margin-top: -20px;
+            width: 100px;
+            display: flex;
+            justify-content: center;
+
+            background-color: #FFF;
+        }
+
+        .TextInternal {
+            display: flex;
+            margin-left: 10px;
+            margin-top: 15px;
+            justify-content: space-between;
+            align-items: center;
+
+            .GridElement {
+                display: grid;
+                grid-template-columns: 1fr 2fr;
+            }
+        }
+
+        .TextDescription {
+            display: flex;
+            margin-left: 10px;
+            margin-top: 15px;
+            padding-top: 0px;
+            height: 150px;
+
+            .GridElement {
+                display: grid;
+                grid-template-columns: 1fr auto;
+                grid-gap: 15px;
+
+                .Input {
+                    width: 660px;
+                    resize: none;
+
+                }
+            }
+        }
+
+        .ButtonsElements {
+            margin-top: 15px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: flex-end;
+
+            .InnerButtonsElements {
+                display: grid;
+                grid-template-columns: repeat(3, auto);
+                grid-gap: 30px;
+                
+                .Button {
+                    cursor: pointer !important;
+
+                    display: flex;
+                    font-weight: bold;
+                    width: 100px;
+                    height: 25px;
+                    border: 1px solid #000;
+                    box-shadow: 3px 3px #000;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+
+        }
+    }
+}

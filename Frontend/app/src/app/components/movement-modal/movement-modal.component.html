@@ -1,0 +1,56 @@
+<div class="movementListComponent">
+    <div class="Text">
+        <p class="TextTitle">Movimentos Manuais</p>
+    </div>
+    <div class="Board">
+        <div class="TextLabel">
+            <label class="Label">Movimento</label>
+        </div>
+        <div class="TextInternal">
+            <div class="GridElement">
+                <label class="Label">Mês:</label>
+                <input class="Input" [(ngModel)]="moviment.month" disabled />
+            </div>
+            <div class="GridElement">
+                <label class="Label">Ano:</label>
+                <input class="Input" [(ngModel)]="moviment.year" disabled />
+            </div>
+        </div>
+        <div class="TextInternal">
+            <div class="GridElement">
+                <label class="Label">Produto:</label>
+                <select [(ngModel)]="productBox" class="Input" disabled>
+                    <option value="0">Produtos</option>
+                    <option *ngFor="let product of fields.products">{{product.productDescription}}</option>
+                </select>
+            </div>
+            <div class="GridElement">
+                <label class="Label">Cosif:</label>
+                <select [(ngModel)]="cosif" class="Input" disabled>
+                    <option value="0">Cosif</option>
+                    <option *ngFor="let product of fields.productCosifs">prod: {{product.productCod}} - Cosif:
+                        {{product.cosifCod}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="TextInternal">
+            <div class="GridElement">
+                <label class="Label">Valor:</label>
+                <input class="Input" [(ngModel)]="moviment.value" disabled />
+            </div>
+        </div>
+        <div class="TextDescription">
+            <div class="GridElement">
+                <label class="Label">Descrição:</label>
+                <textarea class="Input" [(ngModel)]="moviment.releaseDescription" disabled></textarea>
+            </div>
+        </div>
+        <div class="ButtonsElements">
+            <div class="InnerButtonsElements">
+                <a class="Button" (click)="clear()">Limpar</a>
+                <a class="Button" (click)="change()">{{btnNewText}}</a>
+                <a class="Button" (click)="addMoviment()">Incluir</a>
+            </div>
+        </div>
+    </div>
+</div>

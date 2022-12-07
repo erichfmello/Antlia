@@ -1,0 +1,29 @@
+﻿IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND OBJECT_ID = OBJECT_ID('ManualMovimentationList'))
+   DROP PROCEDURE ManualMovimentationList
+GO
+
+CREATE PROC ManualMovimentationList (
+	@Month INT = NULL
+) AS
+BEGIN
+	SELECT
+		MM.DTA_MES				[Month]
+		,MM.DTA_ANO				[Year]
+		,MM.COD_PRODUTO			[ProductCod]
+		,MM.COD_COSIF			[CosifCod]
+		,P.DES_PRODUTO			[ProductDescription]
+		,MM.NUM_LANCAMENTO		[ReleaseNumber]
+		,MM.DES_DESCRICAO		[ReleaseDescription]
+		,MM.VAL_VALOR			[Value]
+	FROM MOVIMENTO_MANUAL AS MM
+	INNER JOIN PRODUTO_COSIF AS PC ON MM.COD_PRODUTO = PC.COD_PRODUTO AND MM.COD_COSIF = PC.COD_COSIF
+	INNER JOIN PRODUTO AS P ON P.COD_PRODUTO = PC.COD_PRODUTO
+	ORDER BY
+		MM.DTA_MES
+		,MM.DTA_ANO
+		,MM.NUM_LANCAMENTO
+END
+GO
+
+EXEC ManualMovimentationList
+GO
